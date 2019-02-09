@@ -15,7 +15,7 @@ $colors: (
   grey: #F8F8F8
 );
 
-$header-height: calc(100vh + 200px);
+$header-height: calc(100vh + 300px);
 
 // Functions
 @function color($color-name){
@@ -69,7 +69,6 @@ p{
   font-family: Montserrat-Regular;
 }
 
-
 .page-borders{
   display: none;
 
@@ -99,6 +98,37 @@ p{
     height: 100vh;
     right: 0;
     top: 0;
+
+    //Links to git and linkedin
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      li{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        a{
+          text-decoration: none;
+          font-size: 1.5em;
+          opacity: 0.7;
+
+          &:hover{
+            color: black;
+            opacity: 1;
+          }
+
+          &:visited{
+            color: black;
+          }
+        }
+      }
+    }
   }
 
   .border-bottom{
@@ -126,6 +156,64 @@ p{
   @include tablet{
     box-sizing: border-box;
     padding: 50px 50px 0px 50px; // Makes sure the content does not disappear under site border
+  }
+
+  // Grey right site of landing section
+  .header-background{
+    width: 50%;
+    height: 100%;
+    background-color: color(grey);
+    position: absolute;
+    right: 0;
+    -webkit-transition: 1s;
+    transition: .7s;
+    transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+  }
+
+  img#landing-image{
+    width: 200px;
+    position: fixed;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: 1s;
+    transition: .9s;
+    transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+  }
+
+  p#landing-text{
+    font-family: Montserrat-Bold;
+    color: #FFF;
+    width: 200px;
+    position: fixed;
+    top: 70%;
+    left: 30px;
+    opacity: 0;
+    transition: .8s;
+    letter-spacing: 1px;
+
+    @include tablet{
+      left: 100px;
+      width: 400px;
+    }
+
+    @include desktop{
+      left: 300px;
+    }
+  }
+
+  img#landing-scroll-down{
+    width: 70px;
+    position: fixed;
+    left: 50%;
+    top: calc(100% - 100px);
+    transform: translateX(-50%);
+    transition: .7s;
+
+    @include tablet{
+      top: calc(100% - 140px);
+    }
   }
 }
 

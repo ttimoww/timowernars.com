@@ -44,6 +44,32 @@ p {
   right: 0;
   top: 0;
 }
+.page-borders .border-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page-borders .border-right ul li {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.page-borders .border-right ul li a {
+  text-decoration: none;
+  font-size: 1.5em;
+  opacity: 0.7;
+}
+.page-borders .border-right ul li a:hover {
+  color: black;
+  opacity: 1;
+}
+.page-borders .border-right ul li a:visited {
+  color: black;
+}
 .page-borders .border-bottom {
   width: 100vw;
   height: 50px;
@@ -59,7 +85,7 @@ p {
 .landing-header {
   background-color: #54a0ff;
   width: 100%;
-  height: calc(100vh + 200px);
+  height: calc(100vh + 300px);
   position: fixed;
   z-index: -9;
 }
@@ -69,13 +95,70 @@ p {
     padding: 50px 50px 0px 50px;
   }
 }
+.landing-header .header-background {
+  width: 50%;
+  height: 100%;
+  background-color: #F8F8F8;
+  position: absolute;
+  right: 0;
+  -webkit-transition: 1s;
+  transition: 0.7s;
+  transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+}
+.landing-header img#landing-image {
+  width: 200px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transition: 1s;
+  transition: 0.9s;
+  transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+}
+.landing-header p#landing-text {
+  font-family: Montserrat-Bold;
+  color: #FFF;
+  width: 200px;
+  position: fixed;
+  top: 70%;
+  left: 30px;
+  opacity: 0;
+  transition: 0.8s;
+  letter-spacing: 1px;
+}
+@media (min-width: 650px) {
+  .landing-header p#landing-text {
+    left: 100px;
+    width: 400px;
+  }
+}
+@media (min-width: 1000px) {
+  .landing-header p#landing-text {
+    left: 300px;
+  }
+}
+.landing-header img#landing-scroll-down {
+  width: 70px;
+  position: fixed;
+  left: 50%;
+  top: calc(100% - 100px);
+  transform: translateX(-50%);
+  transition: 0.7s;
+}
+@media (min-width: 650px) {
+  .landing-header img#landing-scroll-down {
+    top: calc(100% - 140px);
+  }
+}
 
 .personal-section {
   overflow: auto;
   background-color: #F8F8F8;
   width: 100%;
   position: relative;
-  top: calc(100vh + 200px);
+  top: calc(100vh + 300px);
 }
 @media (min-width: 650px) {
   .personal-section {
@@ -86,7 +169,7 @@ p {
 
 .my-work-section {
   position: relative;
-  top: calc(100vh + 200px);
+  top: calc(100vh + 300px);
   overflow: auto;
   width: 100%;
   background-color: #F8F8F8;
