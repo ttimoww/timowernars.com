@@ -16,6 +16,10 @@ p {
   font-family: Montserrat-Regular;
 }
 
+section {
+  padding: 40px 0px;
+}
+
 .page-borders {
   display: none;
 }
@@ -117,39 +121,40 @@ p {
   transition-timing-function: ease;
   -webkit-transition-timing-function: ease;
 }
-.landing-header p#landing-text {
-  font-family: Montserrat-Bold;
-  color: #FFF;
-  width: 200px;
+@media (min-width: 1000px) {
+  .landing-header img#landing-image {
+    width: 300px;
+  }
+}
+.landing-header img#landing-text {
   position: fixed;
-  top: 70%;
+  top: 60%;
   left: 30px;
+  width: 300px;
   opacity: 0;
-  transition: 0.8s;
-  letter-spacing: 1px;
 }
 @media (min-width: 650px) {
-  .landing-header p#landing-text {
-    left: 100px;
-    width: 400px;
+  .landing-header img#landing-text {
+    left: 80px;
   }
 }
 @media (min-width: 1000px) {
-  .landing-header p#landing-text {
+  .landing-header img#landing-text {
     left: 300px;
   }
 }
 .landing-header img#landing-scroll-down {
   width: 70px;
   position: fixed;
-  left: 50%;
+  left: 20px;
   top: calc(100% - 100px);
-  transform: translateX(-50%);
   transition: 0.7s;
+  animation: bounce-down 1s infinite;
 }
 @media (min-width: 650px) {
   .landing-header img#landing-scroll-down {
     top: calc(100% - 140px);
+    left: 70px;
   }
 }
 
@@ -166,6 +171,44 @@ p {
     padding: 0px 50px;
   }
 }
+.personal-section .container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+}
+@media (min-width: 650px) {
+  .personal-section .container {
+    flex-direction: row;
+  }
+}
+.personal-section .container .image-side {
+  position: relative;
+  background-color: green;
+  flex-basis: 50%;
+}
+.personal-section .container .image-side:after {
+  content: "";
+  height: 100px;
+  width: 4px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+.personal-section .container .text-side {
+  position: relative;
+  background-color: yellow;
+  flex-basis: 50%;
+}
+.personal-section .container .text-side::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  height: 4px;
+  width: 100px;
+  background-color: #000;
+}
 
 .my-work-section {
   position: relative;
@@ -178,6 +221,32 @@ p {
   .my-work-section {
     box-sizing: border-box;
     padding: 0px 50px;
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fade-in-right {
+  animation: fade-in-right ease 0.9s forwards;
+}
+
+@keyframes bounce-down {
+  0% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(15px);
+  }
+  0% {
+    transform: translateY(0px);
   }
 }
 

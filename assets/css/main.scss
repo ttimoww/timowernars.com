@@ -39,7 +39,6 @@ $header-height: calc(100vh + 300px);
     @content;
   }
 }
-
 @mixin no-scroll-bar {
   &::-webkit-scrollbar {
     height: 0;
@@ -57,7 +56,6 @@ $header-height: calc(100vh + 300px);
   }
 }
 
-
 // General styles
 html, body{
   margin: 0;
@@ -69,6 +67,11 @@ p{
   font-family: Montserrat-Regular;
 }
 
+section{
+  padding: 40px 0px;
+}
+
+//White borders visible on tablet view and bigger
 .page-borders{
   display: none;
 
@@ -145,6 +148,7 @@ p{
   }
 }
 
+//Landing section with hello & blue/grey background
 .landing-header{
   //<header>
   background-color: color(blue);
@@ -180,22 +184,22 @@ p{
     transition: .9s;
     transition-timing-function: ease;
     -webkit-transition-timing-function: ease;
+
+    @include desktop{
+      width: 300px;
+    }
   }
 
-  p#landing-text{
-    font-family: Montserrat-Bold;
-    color: #FFF;
-    width: 200px;
+  //Will reveal on scroll by giving it the fade-in-right class
+  img#landing-text{
     position: fixed;
-    top: 70%;
+    top: 60%;
     left: 30px;
+    width: 300px;
     opacity: 0;
-    transition: .8s;
-    letter-spacing: 1px;
 
     @include tablet{
-      left: 100px;
-      width: 400px;
+      left: 80px;
     }
 
     @include desktop{
@@ -206,13 +210,14 @@ p{
   img#landing-scroll-down{
     width: 70px;
     position: fixed;
-    left: 50%;
+    left: 20px;
     top: calc(100% - 100px);
-    transform: translateX(-50%);
     transition: .7s;
+    animation: bounce-down 1s infinite;
 
     @include tablet{
       top: calc(100% - 140px);
+      left: 70px;
     }
   }
 }
@@ -228,6 +233,50 @@ p{
     box-sizing: border-box;
     padding: 0px 50px; // Makes sure the content does not disappear under site border
   }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+
+
+    @include tablet{
+      flex-direction: row;
+
+    }
+
+    .image-side{
+      position: relative;
+      background-color: green;
+      flex-basis: 50%;
+
+      &:after{
+        content: '';
+        height: 100px;
+        width: 4px;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 20px;
+      }
+
+    }
+    .text-side{
+      position: relative;
+      background-color: yellow;
+      flex-basis: 50%;
+
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+        height: 4px;
+        width: 100px;
+        background-color: #000;
+      }
+    }
+  }
 }
 
 .my-work-section{
@@ -240,5 +289,31 @@ p{
   @include tablet{
     box-sizing: border-box;
     padding: 0px 50px; // Makes sure the content does not disappear under site border
+  }
+}
+
+
+// KEYFRAMES
+@keyframes fade-in-right{
+  from{
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fade-in-right{animation: fade-in-right ease .9s forwards;}
+
+@keyframes bounce-down{
+  0%{
+    transform: translateY(0px);
+  }
+  40%{
+    transform: translateY(15px);
+  }
+  0%{
+    transform: translateY(0px);
   }
 }

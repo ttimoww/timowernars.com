@@ -14,12 +14,12 @@ const animateHeader = function(){
   if(scrolled === 0){
     $('#landing-background').css('width', '50%');
     $('#landing-image').css('left', '50%');
-    $('#landing-text').css('opacity', '0');
+    $('#landing-text').removeClass('fade-in-right');
     $('#landing-scroll-down').css('opacity', '1');
   }else{
     $('#landing-background').css('width', '0');
     $('#landing-image').css('left', '100%');
-    $('#landing-text').css('opacity', '1');
+    $('#landing-text').css('animation-delay', '.7s').addClass('fade-in-right');
     $('#landing-scroll-down').css('opacity', '0');
   }
 }
