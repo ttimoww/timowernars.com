@@ -160,7 +160,6 @@ section {
 }
 
 .personal-section {
-  z-index: -1;
   overflow: auto;
   background-color: #F8F8F8;
   width: 100%;

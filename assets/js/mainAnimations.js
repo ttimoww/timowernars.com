@@ -1,10 +1,7 @@
 $(window).ready(function(){
-
-
   $(window).scroll(function(){
     animateHeader();
   });
-
 });
 
 const animateHeader = function(){
