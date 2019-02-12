@@ -22,6 +22,7 @@ section {
 
 .page-borders {
   display: none;
+  z-index: 99;
 }
 @media (min-width: 650px) {
   .page-borders {
@@ -159,6 +160,7 @@ section {
 }
 
 .personal-section {
+  z-index: -1;
   overflow: auto;
   background-color: #F8F8F8;
   width: 100%;
@@ -174,19 +176,32 @@ section {
 .personal-section .container {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
+  padding: 30px 0px;
 }
 @media (min-width: 650px) {
   .personal-section .container {
     flex-direction: row;
   }
 }
-.personal-section .container .image-side {
-  position: relative;
-  background-color: green;
-  flex-basis: 50%;
+@media (min-width: 1550px) {
+  .personal-section .container {
+    justify-content: center;
+  }
 }
-.personal-section .container .image-side:after {
+.personal-section .container .image-side {
+  z-index: 2;
+  position: relative;
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (min-width: 1550px) {
+  .personal-section .container .image-side {
+    flex-basis: 35%;
+  }
+}
+.personal-section .container .image-side:before {
   content: "";
   height: 100px;
   width: 4px;
@@ -195,10 +210,34 @@ section {
   top: 0;
   left: 20px;
 }
+.personal-section .container .image-side img {
+  width: 75%;
+  max-width: 250px;
+  margin: 30px 0px;
+}
+.personal-section .container .image-side .grey-background {
+  background-color: #E6E6E6;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+@media (min-width: 650px) {
+  .personal-section .container .image-side .grey-background {
+    display: none;
+  }
+}
 .personal-section .container .text-side {
+  z-index: 2;
+  padding: 30px;
   position: relative;
-  background-color: yellow;
   flex-basis: 50%;
+}
+@media (min-width: 1550px) {
+  .personal-section .container .text-side {
+    flex-basis: 35%;
+  }
 }
 .personal-section .container .text-side::after {
   content: "";
@@ -208,6 +247,43 @@ section {
   height: 4px;
   width: 100px;
   background-color: #000;
+}
+.personal-section .container .text-side img {
+  width: 250px;
+}
+.personal-section .container .text-side ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.personal-section .container .text-side ul li {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+.personal-section .container .text-side ul li a {
+  color: #000;
+  opacity: 0.7;
+}
+.personal-section .container .text-side ul li a:hover {
+  opacity: 1;
+}
+.personal-section .container .text-side ul li a:visited {
+  color: #000;
+}
+.personal-section .container .grey-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #E6E6E6;
+  height: 50%;
+  width: 100%;
+  display: none;
+}
+@media (min-width: 650px) {
+  .personal-section .container .grey-background {
+    display: block;
+  }
 }
 
 .my-work-section {
@@ -220,8 +296,55 @@ section {
 @media (min-width: 650px) {
   .my-work-section {
     box-sizing: border-box;
-    padding: 0px 50px;
+    padding: 40px 50px 90px 50px;
   }
+}
+.my-work-section .container {
+  display: flex;
+  padding: 0px 30px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 650px) {
+  .my-work-section .container {
+    flex-direction: row;
+  }
+}
+.my-work-section .container .project {
+  background-color: #54a0ff;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0px auto 10px auto;
+  width: 100%;
+  max-width: 200px;
+}
+@media (min-width: 650px) {
+  .my-work-section .container .project {
+    margin: 0px 10px 10px 0px;
+  }
+}
+.my-work-section .container .project h2 {
+  font-size: 1.2em;
+  color: white;
+  font-family: Montserrat-Regular;
+  margin: 0px 0px 10px 0px;
+  min-height: 48px;
+}
+.my-work-section .container .project .links {
+  display: flex;
+  justify-content: center;
+}
+.my-work-section .container .project .links a {
+  padding: 5px;
+  color: #FFF;
+  font-size: 1.3em;
+  font-family: Montserrat-Regular;
+  text-decoration: none;
+  display: inline;
+  width: calc(20% - 10px);
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 @keyframes fade-in-right {

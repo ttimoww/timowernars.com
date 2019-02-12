@@ -74,6 +74,7 @@ section{
 //White borders visible on tablet view and bigger
 .page-borders{
   display: none;
+  z-index: 99;
 
   @include tablet{
     display: block;
@@ -223,6 +224,7 @@ section{
 }
 
 .personal-section{
+  z-index: -1;
   overflow: auto;
   background-color: color(grey);
   width: 100%;
@@ -237,20 +239,29 @@ section{
   .container{
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
-
+    padding: 30px 0px;
 
     @include tablet{
       flex-direction: row;
+    }
 
+    @include desktop-large{
+      justify-content: center;
     }
 
     .image-side{
+      z-index: 2;
       position: relative;
-      background-color: green;
       flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
 
-      &:after{
+      @include desktop-large{
+        flex-basis: 35%;
+      }
+
+      &:before{
         content: '';
         height: 100px;
         width: 4px;
@@ -260,11 +271,34 @@ section{
         left: 20px;
       }
 
+      img{
+        width: 75%;
+        max-width: 250px;
+        margin: 30px 0px;
+      }
+
+      .grey-background{
+        background-color: #E6E6E6;
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        right: 0; bottom: 0;
+
+        @include tablet{
+          display: none;
+        }
+      }
+
     }
     .text-side{
+      z-index: 2;
+      padding: 30px;
       position: relative;
-      background-color: yellow;
       flex-basis: 50%;
+
+      @include desktop-large{
+        flex-basis: 35%;
+      }
 
       &::after{
         content: '';
@@ -274,6 +308,48 @@ section{
         height: 4px;
         width: 100px;
         background-color: #000;
+      }
+
+      img{
+        width: 250px;
+      }
+
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li{
+          display: inline-block;
+          font-size: 1.5em;
+          margin-right: 10px;
+
+          a{
+            color: #000;
+            opacity: .7;
+
+            &:hover{
+              opacity: 1;
+            }
+
+            &:visited{
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    .grey-background{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #E6E6E6;
+      height: 50%;
+      width: 100%;
+      display: none;
+
+      @include tablet{
+        display: block;
       }
     }
   }
@@ -288,7 +364,58 @@ section{
 
   @include tablet{
     box-sizing: border-box;
-    padding: 0px 50px; // Makes sure the content does not disappear under site border
+    padding: 40px 50px 90px 50px; // Makes sure the content does not disappear under site border
+  }
+
+  .container{
+    display: flex;
+    padding: 0px 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include tablet{
+      flex-direction: row;
+    }
+
+    .project{
+      background-color: color(blue);
+      padding: 10px;
+      box-sizing: border-box;
+      margin: 0px auto 10px auto;
+      width: 100%;
+      max-width: 200px;
+
+      @include tablet{
+        margin: 0px 10px 10px 0px;
+      }
+
+      h2{
+        font-size: 1.2em;
+        color: white;
+        font-family: Montserrat-Regular;
+        // text-transform: uppercase;
+        margin: 0px 0px 10px 0px;
+        min-height: 48px;
+      }
+
+      .links{
+        display: flex;
+        justify-content: center;
+
+        a{
+          padding: 5px;
+          color: #FFF;
+          font-size: 1.3em;
+          font-family: Montserrat-Regular;
+          text-decoration: none;
+          display: inline;
+          width: calc(20% - 10px);
+          text-align: center;
+          margin-bottom: 5px;
+        }
+      }
+    }
   }
 }
 
