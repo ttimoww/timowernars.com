@@ -249,7 +249,7 @@ section{
     }
 
     .image-side{
-      z-index: 2;
+      // z-index: 2;
       position: relative;
       flex-basis: 50%;
       display: flex;
@@ -272,25 +272,12 @@ section{
 
       img{
         width: 75%;
-        max-width: 250px;
-        margin: 30px 0px;
+        max-width: 200px;
       }
-
-      .grey-background{
-        background-color: #E6E6E6;
-        height: 50%;
-        width: 100%;
-        position: absolute;
-        right: 0; bottom: 0;
-
-        @include tablet{
-          display: none;
-        }
-      }
-
     }
+
     .text-side{
-      z-index: 2;
+      // z-index: 2;
       padding: 30px;
       position: relative;
       flex-basis: 50%;
@@ -336,19 +323,6 @@ section{
             }
           }
         }
-      }
-    }
-    .grey-background{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-color: #E6E6E6;
-      height: 50%;
-      width: 100%;
-      display: none;
-
-      @include tablet{
-        display: block;
       }
     }
   }

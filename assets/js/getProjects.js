@@ -28,7 +28,7 @@ const writeToPage = function(projectName, projectUrl, projectRepoUrl){
 }
 
 /**
-* Reads out all the existing projects from the json file.
+* Reads out all the existing projects from the json file
 */
 const getProjects = function(){
   fetch('assets/json/projects.json')

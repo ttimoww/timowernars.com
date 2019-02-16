@@ -188,7 +188,6 @@ section {
   }
 }
 .personal-section .container .image-side {
-  z-index: 2;
   position: relative;
   flex-basis: 50%;
   display: flex;
@@ -211,24 +210,9 @@ section {
 }
 .personal-section .container .image-side img {
   width: 75%;
-  max-width: 250px;
-  margin: 30px 0px;
-}
-.personal-section .container .image-side .grey-background {
-  background-color: #E6E6E6;
-  height: 50%;
-  width: 100%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-@media (min-width: 650px) {
-  .personal-section .container .image-side .grey-background {
-    display: none;
-  }
+  max-width: 200px;
 }
 .personal-section .container .text-side {
-  z-index: 2;
   padding: 30px;
   position: relative;
   flex-basis: 50%;
@@ -269,20 +253,6 @@ section {
 }
 .personal-section .container .text-side ul li a:visited {
   color: #000;
-}
-.personal-section .container .grey-background {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #E6E6E6;
-  height: 50%;
-  width: 100%;
-  display: none;
-}
-@media (min-width: 650px) {
-  .personal-section .container .grey-background {
-    display: block;
-  }
 }
 
 .my-work-section {
