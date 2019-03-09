@@ -1,0 +1,54 @@
+.illustration{
+    // It should always sized in 1:1.603. This is done by JS on window resize
+    width: 300px;
+
+    .illustration__face{
+        position: relative;
+        background-image: url('../images/illustration/face.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+
+        .illustration__face__eye{
+            width: 18.7%;
+            height: 11.7%;
+            border-radius: 50%;
+            position: absolute;
+            top: 34%;
+            display: inline-block;
+            
+            //Left eye
+            &:first-of-type{
+                left: 19%;
+
+                &:after{
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 15px;
+                    width: 60%;
+                    height: 60%;
+                    background-color: #4b100d;
+                    border-radius: 50%;
+                }
+            }
+
+            //Right eye
+            &:nth-of-type(2){
+                left: 61%;
+
+                &:after{
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 15px;
+                    width: 60%;
+                    height: 60%;
+                    background-color: #4b100d;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
