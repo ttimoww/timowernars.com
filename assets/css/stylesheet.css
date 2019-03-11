@@ -1,10 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 html, body {
   margin: 0;
   padding: 0;
 }
 
+.wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.projects {
+  margin: 50px auto;
+  width: 90%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+@media (min-width: 576px) {
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .projects {
+    width: 800px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.projects .project {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-left: 2px solid lightgrey;
+  border-right: 2px solid lightgrey;
+  margin: 0 10px;
+  font-family: "Roboto", sans-serif;
+}
+.projects .project h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-weight: bold;
+  height: 50px;
+}
+.projects .project .project__screenshot {
+  display: none;
+}
+@media (min-width: 576px) {
+  .projects .project .project__screenshot {
+    display: block;
+  }
+}
+.projects .project .project__screenshot img {
+  width: 100%;
+  margin: 0 auto;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+.projects .project .project__screenshot img:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.socials {
+  width: 100%;
+}
+.socials .socials__container {
+  display: flex;
+  justify-content: center;
+}
+.socials .socials__container i {
+  font-size: 2em;
+  margin: 10px;
+}
+
 .illustration {
-  width: 300px;
+  min-width: 170px;
+  width: 50%;
+  max-width: 200px;
+  margin: 50px auto 0px auto;
 }
 .illustration .illustration__face {
   position: relative;
