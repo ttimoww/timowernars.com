@@ -1,7 +1,4 @@
 # timowernars.com
-<<<<<<< HEAD
-Personal portfolio website
-=======
 [timowernars.com](http://timowernars.com)
 
 ## Made with
@@ -14,4 +11,3 @@ This repos contains my personal portfolio website.
 
 ## Author
 * **Timo Wernars** - [LinkedIn](https://www.linkedin.com/in/timo-wernars/)
->>>>>>> v3
