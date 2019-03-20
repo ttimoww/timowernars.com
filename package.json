@@ -1,0 +1,14 @@
+{
+  "name": "timowernars.com",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Website 2019",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch assets/sass/main.scss:assets/css/stylesheet.css"
+  },
+  "author": "Timo Wernars",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

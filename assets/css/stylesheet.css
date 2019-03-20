@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+.socials a img {
+  width: 30px;
+  margin: 5px;
+}
+
+.illustration {
+  min-width: 170px;
+  width: 100%;
+  max-width: 250px;
+  margin: 40px auto;
+}
+.illustration .illustration__face {
+  position: relative;
+  background-image: url("../images/illustration/face.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.illustration .illustration__face .illustration__face__eye {
+  width: 18.7%;
+  height: 11.7%;
+  border-radius: 50%;
+  position: absolute;
+  top: 34%;
+  display: inline-block;
+}
+.illustration .illustration__face .illustration__face__eye:first-of-type {
+  left: 19%;
+}
+.illustration .illustration__face .illustration__face__eye:first-of-type:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 60%;
+  height: 60%;
+  background-color: #4b100d;
+  border-radius: 50%;
+}
+.illustration .illustration__face .illustration__face__eye:nth-of-type(2) {
+  left: 61%;
+}
+.illustration .illustration__face .illustration__face__eye:nth-of-type(2):after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 60%;
+  height: 60%;
+  background-color: #4b100d;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=stylesheet.css.map */
