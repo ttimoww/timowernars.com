@@ -1,13 +1,11 @@
 .socials{
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    a{
 
-    .socials__container{
-        display: flex;
-        justify-content: center;
-
-        i{
-            font-size: 2em;
-            margin: 10px;
+        img{
+            width: 30px;
+            margin: 5px;
         }
     }
 }
